@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pockemon/static/css/main.03d7179f.css",
+    "main.js": "/pockemon/static/js/main.145df0b4.js",
+    "static/js/787.cc90a0b3.chunk.js": "/pockemon/static/js/787.cc90a0b3.chunk.js",
+    "index.html": "/pockemon/index.html",
+    "main.03d7179f.css.map": "/pockemon/static/css/main.03d7179f.css.map",
+    "main.145df0b4.js.map": "/pockemon/static/js/main.145df0b4.js.map",
+    "787.cc90a0b3.chunk.js.map": "/pockemon/static/js/787.cc90a0b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.03d7179f.css",
+    "static/js/main.145df0b4.js"
+  ]
+}
