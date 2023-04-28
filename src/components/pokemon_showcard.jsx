@@ -1,42 +1,60 @@
 import React from 'react';
 
-const PokemonShowcard = () => {
-    return (
-        <div className="pokemon-showcard-layout">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"  alt=""/>
-            <h1>Pikachu #025</h1>
-            <table className="pokemon-show-stats">
-                <tr>
-                    <td>Type:</td>
-                    <td>Fire</td>
-                </tr>
-                <tr>
-                    <td>Attack:</td>
-                    <td>35</td>
-                </tr>
-                <tr>
-                    <td>Defense:</td>
-                    <td>53</td>
-                </tr>
-                <tr>
-                    <td>Special-attack:</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>Speed:</td>
-                    <td>47</td>
-                </tr>
-                <tr>
-                    <td>Weight:</td>
-                    <td>28</td>
-                </tr>
-                <tr>
-                    <td>Total moves:</td>
-                    <td>89</td>
-                </tr>
 
-            </table>
-        </div>
+const PokemonShowcard = ({data}) => {
+    const source = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"
+    const svg =".svg"
+    return (
+        <>
+            {
+                (!data) ? "" : (
+
+                    <>
+                        <div className="pokemon-showcard-layout">
+                            <img
+                                src={source+data.id+svg} alt=""/>
+                            <h1>{data.name} #{data.id}</h1>
+                            <table className="pokemon-show-stats">
+                                <tr>
+                                    <td>type:</td>
+                                    <td>
+                                        {
+                                            data.types.map(slot=>{
+                                                return(
+                                                <h5>{slot.type.name}</h5>)
+                                            })
+                                        }
+                                    </td>
+                                </tr>
+
+                                    {
+                                        data.stats.map(poke=>{
+                                            return(
+                                                <>
+                                                    <tr>
+                                                <td>{poke.stat.name}:</td>
+                                                <td>{poke.base_stat}</td>
+                                                    </tr>
+                                                </>
+                                            )
+                                        })
+                                    }
+                                <tr>
+                                    <td>weight:</td>
+                                    <td>{data.weight}</td>
+                                </tr>
+                                <tr>
+                                    <td>total moves:</td>
+                                    <td>{data.moves.length}</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </>
+                )
+            }
+
+        </>
     );
 };
 
