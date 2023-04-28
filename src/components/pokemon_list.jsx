@@ -10,7 +10,7 @@ const PokemonList = () => {
     const [nextUrl,setNextUrl]=useState();
     const [pokeDex,setPokeDex]=useState();
 
-    const pokeFun=async()=>{
+    const pokemonGo=async()=>{
         setLoading(true)
         const res=await Axios.get(url);
         setNextUrl(res.data.next);
@@ -28,7 +28,7 @@ const PokemonList = () => {
         })
     }
     useEffect(() => {
-        pokeFun();
+        pokemonGo();
     }, [url]);
     return (
         <>
