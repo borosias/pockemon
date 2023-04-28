@@ -15,7 +15,11 @@ const PokemonTemplate = ({pokemonInfo, loading,infoPokemon}) => {
                                 alt=""/>
                             <h2>{item.name}</h2>
                             <div className="pokemon-type">
-                                Electric
+                                { item.types.map(slot=>{
+                                    return(
+                                        <span>{slot.type.name} </span>
+                                    )
+                                })}
                             </div>
                         </div>
                         </>
